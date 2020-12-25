@@ -69,5 +69,5 @@ set -gx PATH $PATH $HOME/data/applications
 set -gx PATH $PATH $HOME/bin
 
 # fnm
-fnm env --multi | source
+fnm env | source
 set -gx NODE_PATH (npm root -g)
