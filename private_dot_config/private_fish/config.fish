@@ -1,9 +1,3 @@
-if not functions -q fisher
-    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
-    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-    fish -c fisher
-end
-
 # asdf version manager
 source ~/.asdf/asdf.fish
 
@@ -12,16 +6,7 @@ thefuck --alias | source
 
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
-#fasd
-alias a='fasd -a'        # any
-alias s='fasd -si'       # show / search / select
-alias d='fasd -d'        # directory
-alias f='fasd -f'        # file
-alias sd='fasd -sid'     # interactive directory selection
-alias sf='fasd -sif'     # interactive file selection
-alias z='fasd_cd -d'     # cd, same functionality as j in autojump
-alias zz='fasd_cd -d -i' # cd with interactive selection
-alias j='fasd_cd -d'     # cd, same functionality as j in autojump
+alias j='z'     # cd, same functionality as j in autojump
 
 #aliases
 alias gc='git commit --verbose'
