@@ -305,3 +305,5 @@ bind - split-window -v -c "#{pane_current_path}"
 
 # fuzzy search of sessions
 bind s split-window -v "fs"
+
+set -g default-shell /usr/bin/fish

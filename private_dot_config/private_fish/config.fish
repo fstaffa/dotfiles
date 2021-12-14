@@ -9,17 +9,19 @@ if status is-interactive
 end
 
 # asdf version manager
-source ~/.asdf/asdf.fish
+if test -e ~/.asdf/asdf.fish
+    source ~/.asdf/asdf.fish
+end
 
 # pipx
 set PATH $PATH ~/.local/bin
 
 # thefuck
-thefuck --alias | source 
+thefuck --alias | source
 
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
-alias j='z'     # cd, same functionality as j in autojump
+alias j='z' # cd, same functionality as j in autojump
 
 #aliases
 alias gc='git commit --verbose'
@@ -54,3 +56,14 @@ set -gx GOPATH ~/data/programming/go
 set -gx PATH $PATH $GOPATH/bin
 set -gx PATH $PATH $HOME/data/applications
 set -gx PATH $PATH $HOME/bin
+
+
+# flatpak
+set -l xdg_data_home $XDG_DATA_HOME ~/.local/share
+set -gx --path XDG_DATA_DIRS $xdg_data_home[1]/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+
+for flatpakdir in ~/.local/share/flatpak/exports/bin /var/lib/flatpak/exports/bin
+    if test -d $flatpakdir
+        contains $flatpakdir $PATH; or set -a PATH $flatpakdir
+    end
+end
