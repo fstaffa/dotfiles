@@ -1,0 +1,14 @@
+[pull]
+	ff = only
+[core]
+	editor = vim
+[init]
+	defaultBranch = master
+[gitlab]
+	user = fstaffa
+
+[includeIf "gitdir:~/data/personal/"]
+	path = ~/.config/git/personal-github.gitconfig
+
+[includeIf "gitdir:~/.local/share/chezmoi/"]
+	path = ~/.config/git/personal-github.gitconfig
