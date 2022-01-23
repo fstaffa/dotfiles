@@ -12,3 +12,8 @@
 
 [includeIf "gitdir:~/.local/share/chezmoi/"]
 	path = ~/.config/git/personal-github.gitconfig
+[gitlab "gitlab.com/api"]
+	user = fstaffa
+[user]
+	name = Filip Staffa
+	email = 294522+fstaffa@users.noreply.github.com

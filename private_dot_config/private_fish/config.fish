@@ -56,6 +56,7 @@ set -gx GOPATH ~/data/programming/go
 set -gx PATH $PATH $GOPATH/bin
 set -gx PATH $PATH $HOME/data/applications
 set -gx PATH $PATH $HOME/bin
+set -gx PATH $PATH $HOME/.emacs.d/bin
 
 
 # flatpak

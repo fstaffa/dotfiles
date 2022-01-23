@@ -18,5 +18,7 @@
      "736A C00E 1254 378B A982  7AF6 9DBE 8265 81B6 4490"))))
  (channel
   (name 'personal)
-  (url "https://github.com/fstaffa/guix-repository.git"))
+  (url "https://github.com/fstaffa/guix-repository.git")
+  ;; (url "file:///home/mathematician314/data/personal/guix-channel")
+  )
  %default-channels)
