@@ -1,0 +1,3 @@
+encryption = "gpg"
+[gpg]
+  recipient = "0AFD7450A810AE3E"
