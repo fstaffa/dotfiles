@@ -1,0 +1,47 @@
+# ZIM setup
+
+ZIM_HOME=${XDG_CACHE_HOME}/zim
+# Download zimfw plugin manager if missing.
+if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+  curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+      https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+fi
+
+source ${ZIM_HOME}/init.zsh
+
+# Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+  source ${ZIM_HOME}/zimfw.zsh init -q
+fi
+
+#Guix
+
+export GUIX_EXTRA_PROFILES=$HOME/.guix-extra-profiles
+
+for i in $GUIX_EXTRA_PROFILES/*; do
+    profile=$i
+    if [ -f "$profile"/etc/profile ]; then
+        GUIX_PROFILE="$profile"
+        . "$GUIX_PROFILE"/etc/profile
+    fi
+    unset profile
+done
+
+
+# other
+source $HOME/.config/zsh/work/work.zsh
+source $HOME/.config/zsh/work/secrets.zsh
+
+FPATH=$ZDOTDIR/completions:$FPATH
+
+source $HOME/.config/zsh/fzf/fzf.sh
+
+if command -v fnm &> /dev/null
+then
+  eval "$(fnm env --use-on-cd)"
+fi
+
+if command -v zoxide &> /dev/null
+then
+  eval "$(zoxide init --cmd j zsh)"
+fi
