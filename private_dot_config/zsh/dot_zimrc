@@ -4,7 +4,3 @@ zmodule environment
 zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-autosuggestions
 zmodule MichaelAquilina/zsh-you-should-use
-zmodule duration-info
-zmodule git-info
-zmodule prompt-pwd
-zmodule eriner
