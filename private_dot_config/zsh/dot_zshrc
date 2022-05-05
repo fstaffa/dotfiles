@@ -105,4 +105,7 @@ function vm {
   cd -
 }
 
+#alias
+alias gs="git status"
+
 eval "$(starship init zsh)"
