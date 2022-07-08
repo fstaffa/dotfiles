@@ -32,3 +32,10 @@ function set_ccm_test_keys {
     export E2E_CLIENT_ID=$(echo $E2E_SECRET | jq -r '.id')
     export E2E_CLIENT_SECRET=$(echo $E2E_SECRET | jq -r '.secret')
 }
+
+function set_shipcalc_db_keys {
+    SECRET_NAME=production/shipcalc/db-app-user
+    SECRET=$(aws secretsmanager get-secret-value --profile logisticsquotingplanning --secret-id $SECRET_NAME | jq ".SecretString | fromjson")
+    export DATABASE__USER=$(echo $SECRET | jq -r '.username')
+    export DATABASE__PASSWORD=$(echo $SECRET | jq -r '.password')
+}

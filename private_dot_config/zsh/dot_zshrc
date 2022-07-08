@@ -84,10 +84,10 @@ function set_aws_keys {
   then
     export AWS_SESSION_TOKEN=$3
   fi
-
-
 }
 
+export DOOMDIR='~/data/personal/doom.d/'
+export PATH="$PATH:$HOME/.dotfiles/doom-emacs/bin"
 export VISUAL='emacsclient -c -t'
 export EDITOR='emacsclient -c -t'
 

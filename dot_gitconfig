@@ -6,6 +6,8 @@
 	defaultBranch = master
 [gitlab]
 	user = fstaffa
+[user]
+	name = Filip Staffa
 
 [includeIf "gitdir:~/data/personal/"]
 	path = ~/.config/git/personal-github.gitconfig
