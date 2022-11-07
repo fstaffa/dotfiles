@@ -8,6 +8,7 @@
 	user = fstaffa
 [user]
 	name = Filip Staffa
+	email = 294522+fstaffa@users.noreply.github.com
 
 [includeIf "gitdir:~/data/personal/"]
 	path = ~/.config/git/personal-github.gitconfig

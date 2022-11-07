@@ -14,19 +14,6 @@ if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
   source ${ZIM_HOME}/zimfw.zsh init -q
 fi
 
-#Guix
-
-export GUIX_EXTRA_PROFILES=$HOME/.guix-extra-profiles
-
-for i in $GUIX_EXTRA_PROFILES/*; do
-    profile=$i
-    if [ -f "$profile"/etc/profile ]; then
-        GUIX_PROFILE="$profile"
-        . "$GUIX_PROFILE"/etc/profile
-    fi
-    unset profile
-done
-
 # bat as manpage
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
@@ -105,7 +92,16 @@ function vm {
   cd -
 }
 
+# nix
+export XDG_DATA_DIRS="$XDG_DATA_DIRS:$HOME/.nix-profile/bin"
+
 #alias
 alias gs="git status"
 
 eval "$(starship init zsh)"
+
+# mcfly
+export MCFLY_RESULTS=60
+export MCFLY_FUZZY=2
+
+eval "$(mcfly init zsh)"
