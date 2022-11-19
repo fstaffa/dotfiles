@@ -1,6 +1,0 @@
-[user]
-	name = Filip Staffa
-	email = 294522+fstaffa@users.noreply.github.com
-    signingKey = 2F542A51673EB578
-[commit]
-    gpgSign = true

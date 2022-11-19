@@ -1,5 +1,0 @@
-(specifications->manifest
- '(
-   "stskeygen"
-   "awscli"
-   ))
